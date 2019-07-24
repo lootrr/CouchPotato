@@ -27,7 +27,7 @@ all_trials = all_trials.concat(doubleSubNoun(3));
 all_trials = all_trials.concat(subIntNoun(3));
 
 //randomization of the 3 types of blocks
-//all_trials = jsPsych.randomization.repeat(all_trials,1);
+all_trials = jsPsych.randomization.repeat(all_trials,1);
 
 // combine all the trials in order for experiment to function
 timeline.push(intro);
