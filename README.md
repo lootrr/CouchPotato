@@ -14,7 +14,7 @@ git clone https://github.com/lootrr/CouchPotato
 ```python
 python -m http.server 1234 # create a local server to run the html file
 ```
-or view using [this link](https://rawcdn.githack.com/lootrr/CouchPotato/ea26e262cef7bd1408166349bd28dae3cf7bbe96/experiment.html)
+or view using [this link](https://raw.githack.com/lootrr/CouchPotato/master/experiment.html)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
