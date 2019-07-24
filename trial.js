@@ -1,7 +1,7 @@
 
 // These are the specific functions used to generate the experiments
 
-// declartion function used to find a randon index 
+// declartion function used to find a randon index from [min,max).
 function randomInd(min, max){
   return Math.floor((Math.random() * (max - min) ) + min);
 }
@@ -25,11 +25,15 @@ function doubleIntNoun(amount){
         stimulus: '<strong>Which description of \"' + stims[noun_ind].noun + '\" sounds more natural?</strong>',
         labels: ["the " + stims[noun_ind].int_adj[int_adj_ind1] + " " + stims[noun_ind].int_adj[int_adj_ind2] + " "  + stims[noun_ind].noun, 
                 "the " + stims[noun_ind].int_adj[int_adj_ind2] + " " + stims[noun_ind].int_adj[int_adj_ind1] + " "  + stims[noun_ind].noun],
-        prompt: "<p>Adjust the slider to indicate your preference. Then, click “continue” to proceed.</p>",
+        prompt: "<p>Adjust the slider to indicate your preference. Then, click \"continue\" to proceed.</p>",
         require_movement: true,
         min: 0,
         max: 6,
-        start: 3
+        start: 3,
+        data: {data_type: "int_int_noun",
+               noun_type: stims[noun_ind].noun,
+               int_type_1: stims[noun_ind].int_adj[int_adj_ind1],
+               int_type_2: stims[noun_ind].int_adj[int_adj_ind2]}
     }
     all_trials.push(trial);
   }
@@ -55,11 +59,15 @@ function doubleSubNoun(amount){
         stimulus: '<strong>Which description of \"' + stims[noun_ind].noun + '\" sounds more natural?</strong>',
         labels: ["the " + stims[noun_ind].sub_adj[sub_adj_ind1] + " " + stims[noun_ind].sub_adj[sub_adj_ind2] + " "  + stims[noun_ind].noun, 
                 "the " + stims[noun_ind].sub_adj[sub_adj_ind2] + " " + stims[noun_ind].sub_adj[sub_adj_ind1] + " "  + stims[noun_ind].noun],
-        prompt: "<p>Adjust the slider to indicate your preference. Then, click “continue” to proceed.</p>",
+        prompt: "<p>Adjust the slider to indicate your preference. Then, click \"continue\" to proceed.</p>",
         require_movement: true,
         min: 0,
         max: 6,
-        start: 3
+        start: 3,
+        data: {data_type: "sub_sub_noun",
+               noun_type: stims[noun_ind].noun,
+               sub_type_1: stims[noun_ind].sub_adj[sub_adj_ind1],
+               sub_type_2: stims[noun_ind].sub_adj[sub_adj_ind2]}
     }
     all_trials.push(trial);
   }
@@ -76,18 +84,34 @@ function subIntNoun(amount){
     let noun_ind = randomInd(0, stims.length);
     let int_adj_ind = randomInd(0, stims[noun_ind].int_adj.length);
     let sub_adj_ind = randomInd(0, stims[noun_ind].sub_adj.length);
+    
+    // used to truly randomize the placement of sub and int adjectives
+    let label_1;
+    let label_2;
 
-    // where the trials are created
+    // used to change the position of sub-int-noun and int-sub-noun to prevent bias from occuring
+    if(randomInd(0,2) == 1){
+      label_1 = "the " + stims[noun_ind].sub_adj[sub_adj_ind] + " " + stims[noun_ind].int_adj[int_adj_ind] + " "  + stims[noun_ind].noun;
+      label_2 = "the " + stims[noun_ind].int_adj[int_adj_ind] + " " + stims[noun_ind].sub_adj[sub_adj_ind] + " "  + stims[noun_ind].noun;
+    }else{
+      label_1 = "the " + stims[noun_ind].int_adj[int_adj_ind] + " " + stims[noun_ind].sub_adj[sub_adj_ind] + " "  + stims[noun_ind].noun;
+      label_2 = "the " + stims[noun_ind].sub_adj[sub_adj_ind] + " " + stims[noun_ind].int_adj[int_adj_ind] + " "  + stims[noun_ind].noun;
+    }
+
+    // where the trials are created and pushed to the return array
     let trial = {
         type: 'html-slider-response',
         stimulus: '<strong>Which description of \"' + stims[noun_ind].noun + '\" sounds more natural?</strong>',
-        labels: ["the " + stims[noun_ind].sub_adj[sub_adj_ind] + " " + stims[noun_ind].int_adj[int_adj_ind] + " "  + stims[noun_ind].noun, 
-                "the " + stims[noun_ind].int_adj[int_adj_ind] + " " + stims[noun_ind].sub_adj[sub_adj_ind] + " "  + stims[noun_ind].noun],
-        prompt: "<p>Adjust the slider to indicate your preference. Then, click “continue” to proceed.</p>",
+        labels: [label_1, label_2],
+        prompt: "<p>Adjust the slider to indicate your preference. Then, click \"continue\" to proceed.</p>",
         require_movement: true,
         min: 0,
         max: 6,
-        start: 3
+        start: 3,
+        data: {data_type: "sub_int_noun",
+               noun_type: stims[noun_ind].noun,
+               sub_type: stims[noun_ind].sub_adj[sub_adj_ind],
+               int_type: stims[noun_ind].int_adj[int_adj_ind]}
     }
     all_trials.push(trial);
   }
