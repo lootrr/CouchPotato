@@ -9,7 +9,7 @@ var intro = {
   // configure if you want to change how the instructions are presented
   pages: [
     'Welcome to the experiment. Click next to begin.',
-    'This is just placeholder text that will explain the directions later',
+    'You will be given two similar, but distinct, phrases. You will then be asked to determine which phrase sounds more natural. You should decide based on how you would naturally speak.',
     'This is the final instructions page. click next to begin experiment.'
   ],
   show_clickable_nav: true,
