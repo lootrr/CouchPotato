@@ -10,7 +10,7 @@ var intro = {
   pages: [
     'Welcome to the experiment. Click next to begin.',
     '<p>You will be given two similar, but distinct, phrases.</p> <p>You will then be asked to determine which phrase sounds more natural.</p> <p>You should decide based on how you would naturally speak.</p> ',
-    'This is the final instructions page. click next to begin experiment.'
+    'This is the final instructions page. click next to begin the experiment.'
   ],
   show_clickable_nav: true
 }
