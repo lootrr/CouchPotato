@@ -27,7 +27,8 @@ function doubleIntNoun(amount){
                 "the " + stims[noun_ind].int_adj[int_adj_ind2] + " " + stims[noun_ind].int_adj[int_adj_ind1] + " "  + stims[noun_ind].noun],
         prompt: "<p>Adjust the slider to indicate your preference.</p>",
         min: 0,
-        max: 6
+        max: 6,
+        start: 3
     }
     all_trials.push(trial);
   }
@@ -55,7 +56,8 @@ function doubleSubNoun(amount){
                 "the " + stims[noun_ind].sub_adj[sub_adj_ind2] + " " + stims[noun_ind].sub_adj[sub_adj_ind1] + " "  + stims[noun_ind].noun],
         prompt: "<p>Adjust the slider to indicate your preference.</p>",
         min: 0,
-        max: 6
+        max: 6,
+        start: 3
     }
     all_trials.push(trial);
   }
@@ -81,7 +83,8 @@ function subIntNoun(amount){
                 "the " + stims[noun_ind].int_adj[int_adj_ind] + " " + stims[noun_ind].sub_adj[sub_adj_ind] + " "  + stims[noun_ind].noun],
         prompt: "<p>Adjust the slider to indicate your preference.</p>",
         min: 0,
-        max: 6
+        max: 6,
+        start: 3
     }
     all_trials.push(trial);
   }

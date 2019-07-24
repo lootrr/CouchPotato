@@ -13,7 +13,7 @@ var intro = {
     'This is the final instructions page. click next to begin experiment.'
   ],
   show_clickable_nav: true,
-  post_trial_gap: 500
+  post_trial_gap: 100
 }
 
 // creating and pushing the (adj -> adj -> noun) trial blocks into the timeline
