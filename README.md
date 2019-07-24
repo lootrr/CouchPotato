@@ -1,6 +1,6 @@
 # CouchPotato
 
-CouchPotato is a behavorial experiment built for the Language Comprehension lab @ UCSD.  It was built with the jsPsych library.
+CouchPotato is a behavorial experiment built for the Language Comprehension Lab @ UCSD.  It was built with the jsPsych library.
 
 ## Installation
 
