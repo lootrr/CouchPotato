@@ -9,11 +9,10 @@ var intro = {
   // configure if you want to change how the instructions are presented
   pages: [
     'Welcome to the experiment. Click next to begin.',
-    'You will be given two similar, but distinct, phrases. You will then be asked to determine which phrase sounds more natural. You should decide based on how you would naturally speak.',
+    '<p>You will be given two similar, but distinct, phrases.</p> <p>You will then be asked to determine which phrase sounds more natural.</p> <p>You should decide based on how you would naturally speak.</p> ',
     'This is the final instructions page. click next to begin experiment.'
   ],
-  show_clickable_nav: true,
-  post_trial_gap: 100
+  show_clickable_nav: true
 }
 
 // creating and pushing the (adj -> adj -> noun) trial blocks into the timeline
