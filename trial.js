@@ -22,10 +22,11 @@ function doubleIntNoun(amount){
     // where the trials are created
     let trial = {
         type: 'html-slider-response',
-        stimulus: '<strong>Which description of ' + stims[noun_ind].noun + ' sounds more natural?</strong>',
+        stimulus: '<strong>Which description of \"' + stims[noun_ind].noun + '\" sounds more natural?</strong>',
         labels: ["the " + stims[noun_ind].int_adj[int_adj_ind1] + " " + stims[noun_ind].int_adj[int_adj_ind2] + " "  + stims[noun_ind].noun, 
                 "the " + stims[noun_ind].int_adj[int_adj_ind2] + " " + stims[noun_ind].int_adj[int_adj_ind1] + " "  + stims[noun_ind].noun],
         prompt: "<p>Adjust the slider to indicate your preference.</p>",
+        require_movement: true,
         min: 0,
         max: 6,
         start: 3
@@ -51,10 +52,11 @@ function doubleSubNoun(amount){
     // where the trials are created
     let trial = {
         type: 'html-slider-response',
-        stimulus: '<strong>Which description of ' + stims[noun_ind].noun + ' sounds more natural?</strong>',
+        stimulus: '<strong>Which description of \"' + stims[noun_ind].noun + '\" sounds more natural?</strong>',
         labels: ["the " + stims[noun_ind].sub_adj[sub_adj_ind1] + " " + stims[noun_ind].sub_adj[sub_adj_ind2] + " "  + stims[noun_ind].noun, 
                 "the " + stims[noun_ind].sub_adj[sub_adj_ind2] + " " + stims[noun_ind].sub_adj[sub_adj_ind1] + " "  + stims[noun_ind].noun],
         prompt: "<p>Adjust the slider to indicate your preference.</p>",
+        require_movement: true,
         min: 0,
         max: 6,
         start: 3
@@ -78,10 +80,11 @@ function subIntNoun(amount){
     // where the trials are created
     let trial = {
         type: 'html-slider-response',
-        stimulus: '<strong>Which description of ' + stims[noun_ind].noun + ' sounds more natural?</strong>',
+        stimulus: '<strong>Which description of \"' + stims[noun_ind].noun + '\" sounds more natural?</strong>',
         labels: ["the " + stims[noun_ind].sub_adj[sub_adj_ind] + " " + stims[noun_ind].int_adj[int_adj_ind] + " "  + stims[noun_ind].noun, 
                 "the " + stims[noun_ind].int_adj[int_adj_ind] + " " + stims[noun_ind].sub_adj[sub_adj_ind] + " "  + stims[noun_ind].noun],
         prompt: "<p>Adjust the slider to indicate your preference.</p>",
+        require_movement: true,
         min: 0,
         max: 6,
         start: 3
