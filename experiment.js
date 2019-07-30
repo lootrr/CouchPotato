@@ -47,6 +47,7 @@ jsPsych.init({timeline: timeline,
 /*
 jsPsych.init({
 timeline: timeline,
+show_progress_bar: true,
 on_finish: function() {
   jsPsych.data.addProperties({"rand_id": id});
   $.ajax({
