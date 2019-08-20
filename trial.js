@@ -5,6 +5,46 @@
 function randomInd(min, max){
   return Math.floor((Math.random() * (max - min) ) + min);
 }
+// used to check and prevent bad matchings of the two adjectives that correspond to the noun
+function sameType(adj1, adj2){
+
+  // checks to see if the adjs are the same
+  if(adj1 === adj2){
+    return true;
+  }
+  
+  // used to check intersective adjectives against each other
+  if ((adj1 === "dirty" && adj2 === "clean") || (adj1 === "dirty" && adj2 == "clean")){
+    return true;
+
+  }else if ((adj1 === "round" && adj2 === "square") || (adj1 === "square" && adj2 === "round") ){
+    return true;
+
+  }else if ((adj1 === "plastic" && adj2 === "wooden") || (adj1 === "plastic" && adj2 === "wooden") ){
+    return true;
+
+  }else if((adj1 === "red" && adj2 === "yellow") || (adj1 === "yellow" && adj2 === "red")){
+    return true;
+
+  }
+  
+  // used to check subsective adjectives against each other
+  if ((adj1 === "sweet" && adj2 === "bitter") || (adj1 === "bitter" && adj2 == "sweet")){
+    return true;
+
+  }else if ((adj1 === "ugly" && adj2 === "beautiful") || (adj1 === "ugly" && adj2 === "beautiful") ){
+    return true;
+
+  }else if ((adj1 === "big" && adj2 === "small") || (adj1 === "small" && adj2 === "big") ){
+    return true;
+
+  }else if((adj1 === "tall" && adj2 === "short") || (adj1 === "short" && adj2 === "big")){
+    return true;
+
+  }
+
+  return false;
+}
 
 // creating and pushing the (int_adj -> int_adj -> noun) trial blocks into a return array
 function doubleIntNoun(amount){
@@ -15,7 +55,9 @@ function doubleIntNoun(amount){
     let noun_ind = randomInd(0, stims.length);
     let int_adj_ind1 = randomInd(0, stims[noun_ind].int_adj.length);
     let int_adj_ind2 = randomInd(0, stims[noun_ind].int_adj.length);
-    while(int_adj_ind1 == int_adj_ind2){
+
+    // used remove the same type of words from the list such as "ugly beautiful chair or round square table. In addition remove duplicate words "
+    while( sameType(stims[noun_ind].int_adj[int_adj_ind1], stims[noun_ind].int_adj[int_adj_ind2]) ){
       int_adj_ind2 = randomInd(0, stims[noun_ind].int_adj.length);
     }
 
@@ -49,7 +91,7 @@ function doubleSubNoun(amount){
     let noun_ind = randomInd(0, stims.length);
     let sub_adj_ind1 = randomInd(0, stims[noun_ind].sub_adj.length);
     let sub_adj_ind2 = randomInd(0, stims[noun_ind].sub_adj.length);
-    while(sub_adj_ind1 == sub_adj_ind2){
+    while( sameType(stims[noun_ind].sub_adj[sub_adj_ind1], stims[noun_ind].sub_adj[sub_adj_ind2]) ){
       sub_adj_ind2 = randomInd(0, stims[noun_ind].sub_adj.length);
     }
 
