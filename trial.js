@@ -38,7 +38,7 @@ function sameType(adj1, adj2){
   }else if ((adj1 === "big" && adj2 === "small") || (adj1 === "small" && adj2 === "big") ){
     return true;
 
-  }else if((adj1 === "tall" && adj2 === "short") || (adj1 === "short" && adj2 === "big")){
+  }else if((adj1 === "tall" && adj2 === "short") || (adj1 === "short" && adj2 === "tall")){
     return true;
 
   }
