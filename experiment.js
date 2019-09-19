@@ -1,4 +1,4 @@
-// TODO: fixing adj-adj-noun patterns such as tall-small-chair
+// TODO: import data to the server and make sure LCL works
 
 // timeline that sets the experiment
 var timeline = [];
@@ -45,6 +45,8 @@ jsPsych.init({timeline: timeline,
 
 // start the experiment and then when finished updates data
 /*
+id = jsPsych.randomization.randomID();
+
 jsPsych.init({
 timeline: timeline,
 show_progress_bar: true,
