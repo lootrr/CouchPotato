@@ -33,7 +33,7 @@ timeline.push(intro);
 timeline = timeline.concat(all_trials);
 
 // start the experiment and then when finished updates data
-id = jsPsych.randomization.randomID();
+id = jsPsych.randomization.randomID(4);
 jsPsych.init({
   timeline: timeline,
   on_finish: function() {
