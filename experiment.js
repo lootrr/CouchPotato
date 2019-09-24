@@ -19,11 +19,11 @@ var intro = {
 var all_trials = [];
 
 // adding int-int-noun
-all_trials = all_trials.concat(doubleIntNoun(3));
+all_trials = all_trials.concat(doubleIntNoun(1));
 // adding sub-sub-noun
-all_trials = all_trials.concat(doubleSubNoun(3));
+all_trials = all_trials.concat(doubleSubNoun(1));
 // adding sub-int-noun
-all_trials = all_trials.concat(subIntNoun(3));
+all_trials = all_trials.concat(subIntNoun(1));
 
 //randomization of the 3 types of blocks
 all_trials = jsPsych.randomization.repeat(all_trials,1);
@@ -32,39 +32,23 @@ all_trials = jsPsych.randomization.repeat(all_trials,1);
 timeline.push(intro);
 timeline = timeline.concat(all_trials);
 
-/* 
- * testing to see whether or not the timeline is functioning and data
- * is also working. 
- */
-jsPsych.init({timeline: timeline, 
-  show_progress_bar: true,
-  on_finish: function(){
-    jsPsych.data.displayData();
+// start the experiment and then when finished updates data
+id = jsPsych.randomization.randomID();
+jsPsych.init({
+  timeline: timeline,
+  on_finish: function() {
+    $.ajax({
+      type:'post',
+      cache: false,
+      url: "save_data.php",
+      data: {filename: id + ".csv", filedata: jsPsych.data.get().csv()}
+    });
+    $.ajax({
+      type:'post',
+      cache: false,
+      url: "save_data.php",
+      data: {filename: id + ".json", filedata: jsPsych.data.get().json()}
+    });
+    $(".jspsych-display-element").html("The results have been recorded! Data was recorded under the subject ID: <b>" + id + "</b>");
   }
 });
-
-// start the experiment and then when finished updates data
-/*
-id = jsPsych.randomization.randomID();
-
-jsPsych.init({
-timeline: timeline,
-show_progress_bar: true,
-on_finish: function() {
-  jsPsych.data.addProperties({"rand_id": id});
-  $.ajax({
-    type:'post',
-    cache: false,
-    url: "save_data.php",
-    data: {filename: id + ".csv", filedata: jsPsych.data.dataAsCSV()}
-  });
-  $.ajax({
-    type:'post',
-    cache: false,
-    url: "save_data.php",
-    data: {filename: id + ".json", filedata: jsPsych.data.dataAsJSON()}
-  });
-  $(".jspsych-display-element").html("The results have been recorded! Data was recorded under the subject ID: <b>" + id + "</b>");
-}
-});
-*/
