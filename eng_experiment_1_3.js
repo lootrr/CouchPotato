@@ -37,11 +37,11 @@ var intro = {
 var all_trials = [];
 
 // adding int-int-noun
-all_trials = all_trials.concat(doubleIntNoun(10));
+all_trials = all_trials.concat(doubleIntNoun(1));
 // adding sub-sub-noun
-all_trials = all_trials.concat(doubleSubNoun(10));
+all_trials = all_trials.concat(doubleSubNoun(1));
 // adding sub-int-noun
-all_trials = all_trials.concat(subIntNoun(10));
+all_trials = all_trials.concat(subIntNoun(1));
 
 //randomization of the 3 types of blocks
 all_trials = jsPsych.randomization.repeat(all_trials,1);
@@ -71,6 +71,7 @@ jsPsych.init({
     });
     $(".jspsych-display-element").html("<p style='text-align:center;'>" +"The experiment has now ended. Please remember the following ID for the next part:" + "</p>" + 
                                        "<p style=color:blue;text-align:center;font-size:50px;>" + id + "</p>" + 
-                                       "<p style=text-align:center;>" + "You will now be taking a short demographics survey. It should take no longer than 15 minutes." + "</p>");
+                                       "<p style=text-align:center;>" + "You will now be taking a short demographics survey. It should take no longer than 15 minutes." + "</p>" +
+                                       "<a href='https://forms.gle/1ZErnUXF4rzyaxZF6' style='text-align:center;'>" + "survey link is provided here" + "</a>");
   }
 });
