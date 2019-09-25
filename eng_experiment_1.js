@@ -1,7 +1,25 @@
 // TODO: import data to the server and make sure LCL works
-
 // timeline that sets the experiment
 var timeline = [];
+
+// consent form
+var check_consent = function(elem) {
+  if (document.getElementById('consent_checkbox').checked) {
+    return true;
+  }
+  else {
+    alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+    return false;
+  }
+  return false;
+};
+
+var consent = {
+  type:'external-html',
+  url: "eng_consent_1.html",
+  cont_btn: "start",
+  check_fn: check_consent
+};
 
 // introduction where the experimenter learns what he or she can and cannot do
 var intro = {
@@ -29,6 +47,7 @@ all_trials = all_trials.concat(subIntNoun(1));
 all_trials = jsPsych.randomization.repeat(all_trials,1);
 
 // combine all the trials in order for experiment to function
+timeline.push(consent);
 timeline.push(intro);
 timeline = timeline.concat(all_trials);
 
@@ -36,6 +55,7 @@ timeline = timeline.concat(all_trials);
 id = jsPsych.randomization.randomID(4);
 jsPsych.init({
   timeline: timeline,
+  show_progress_bar: true,
   on_finish: function() {
     $.ajax({
       type:'post',
