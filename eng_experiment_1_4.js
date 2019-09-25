@@ -70,9 +70,9 @@ jsPsych.init({
       data: {filename: id + ".json", filedata: jsPsych.data.get().json()}
     });
     // end blurb
-    $(".jspsych-display-element").html("<p style='text-align:center;'>" +"The experiment has now ended. Please remember the following ID for the next part:" + "</p>" + 
+    $(".jspsych-display-element").html("<p style='text-align:center;'>" +"The experiment has now ended. Please record and remember the following ID for the next part:" + "</p>" + 
                                        "<p style=color:blue;text-align:center;font-size:50px;>" + id + "</p>" + 
                                        "<p style=text-align:center;>" + "You will now be taking a short demographics survey. It should take no longer than 15 minutes." + "</p>" +
-                                       "<a href='https://forms.gle/1ZErnUXF4rzyaxZF6' target='_blank' style='text-align:center;'>" + "survey link is provided here" + "</a>");
+                                       "<a href='https://forms.gle/1ZErnUXF4rzyaxZF6' style='text-align:center;' target='_blank'>" + "survey link is provided here" + "</a>");
   }
 });
