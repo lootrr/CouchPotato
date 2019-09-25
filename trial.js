@@ -14,13 +14,13 @@ function sameType(adj1, adj2){
   }
   
   // used to check intersective adjectives against each other
-  if ((adj1 === "dirty" && adj2 === "clean") || (adj1 === "dirty" && adj2 == "clean")){
+  if ((adj1 === "dirty" && adj2 === "clean") || (adj1 === "clean" && adj2 == "dirty")){
     return true;
 
   }else if ((adj1 === "round" && adj2 === "square") || (adj1 === "square" && adj2 === "round") ){
     return true;
 
-  }else if ((adj1 === "plastic" && adj2 === "wooden") || (adj1 === "plastic" && adj2 === "wooden") ){
+  }else if ((adj1 === "plastic" && adj2 === "wooden") || (adj1 === "wooden" && adj2 === "plastic") ){
     return true;
 
   }else if((adj1 === "red" && adj2 === "yellow") || (adj1 === "yellow" && adj2 === "red")){
@@ -32,7 +32,7 @@ function sameType(adj1, adj2){
   if ((adj1 === "sweet" && adj2 === "bitter") || (adj1 === "bitter" && adj2 == "sweet")){
     return true;
 
-  }else if ((adj1 === "ugly" && adj2 === "beautiful") || (adj1 === "ugly" && adj2 === "beautiful") ){
+  }else if ((adj1 === "ugly" && adj2 === "beautiful") || (adj1 === "beautiful" && adj2 === "ugly") ){
     return true;
 
   }else if ((adj1 === "big" && adj2 === "small") || (adj1 === "small" && adj2 === "big") ){
