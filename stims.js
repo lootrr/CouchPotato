@@ -3,13 +3,13 @@ stims = [
 
   {
     noun: "cup",
-    int_adj: ["red", "yellow", "dirty", "clean", "plastic", "wooden"],
+    int_adj: ["red", "yellow", "dirty", "clean", "round", "square", "plastic", "wooden"],
     sub_adj: ["beautiful", "ugly", "big", "small", "tall", "short"]
   },
 
   {
     noun:"chair",
-    int_adj: ["red", "yellow", "round", "square", "dirty", "clean", "plastic", "wooden"],
+    int_adj: ["red", "yellow", "dirty", "clean", "round", "square", "plastic", "wooden"],
     sub_adj: ["beautiful", "ugly", "big", "small", "tall", "short"]
   },
         
@@ -27,7 +27,7 @@ stims = [
 
   {
     noun:"fan",
-    int_adj: ["red", "yellow", "round", "square", "dirty", "clean", "plastic", "wooden"],
+    int_adj: ["red", "yellow", "dirty", "clean", "round", "square", "plastic", "wooden"],
     sub_adj: ["beautiful", "ugly", "big", "small", "tall", "short"]
   },
 
@@ -39,7 +39,7 @@ stims = [
 
   {
     noun: "mango",
-    int_adj: ["red", "yellow", "round", "dirty", "clean"],
+    int_adj: ["red", "yellow", "round", "square", "dirty", "clean"],
     sub_adj: ["sweet", "bitter", "beautiful", "ugly", "big", "small"]
   },
 
@@ -52,7 +52,7 @@ stims = [
   {
     noun: "candy",
     int_adj: ["red", "yellow", "round", "square", "dirty", "clean"],
-    sub_adj: ["sweet", "bitter", "beautiful"]
+    sub_adj: ["sweet", "bitter", "beautiful", "big", "small"]
   },
 
   { 
@@ -69,21 +69,21 @@ viet_stims = [
   // cup
   {
     noun: "cái ly",
-    int_adj: ["màu đỏ", "màu vàng", "hình tròn", "hình vuông", "dơ", "sạch", "nhựa", "gỗ"],
+    int_adj: ["màu đỏ", "màu vàng", "dơ", "sạch", "hình tròn", "hình vuông", "nhựa", "gỗ"],
     sub_adj: ["đẹp", "xấu", "lớn", "nhỏ", "cao", "thấp"]
   },
 
   // chair
   {
     noun: "cái ghế",
-    int_adj: ["màu đỏ", "màu vàng", "hình tròn", "hình vuông", "dơ", "sạch", "nhựa", "gỗ"],
+    int_adj: ["màu đỏ", "màu vàng", "dơ", "sạch", "hình tròn", "hình vuông", "nhựa", "gỗ"],
     sub_adj: ["đẹp", "xấu", "lớn", "nhỏ", "cao", "thấp"]
   },
 
   // table
   {
     noun: "cái bàn",
-    int_adj: ["màu đỏ", "màu vàng", "hình tròn", "hình vuông", "dơ", "sạch", "nhựa", "gỗ"],
+    int_adj: ["màu đỏ", "màu vàng", "dơ", "sạch", "hình tròn", "hình vuông", "nhựa", "gỗ"],
     sub_adj: ["đẹp", "xấu", "lớn", "nhỏ", "cao", "thấp"]
   },
 
@@ -97,7 +97,7 @@ viet_stims = [
   //fan
   {
     noun: "cái quạt",
-    int_adj: ["màu đỏ", "màu vàng", "hình tròn", "hình vuông", "dơ", "sạch", "nhựa", "gỗ"],
+    int_adj: ["màu đỏ", "màu vàng", "dơ", "sạch", "hình tròn", "hình vuông", "nhựa", "gỗ"],
     sub_adj: ["đẹp", "xấu", "lớn", "nhỏ", "cao", "thấp"]
   },
 
@@ -111,14 +111,14 @@ viet_stims = [
   // mango
   {
     noun: "trái xoài",
-    int_adj: ["màu đỏ ", "màu vàng", "dơ", "sạch"],
+    int_adj: ["màu đỏ", "màu vàng", "hình tròn", "hình vuông", "dơ", "sạch"],
     sub_adj: ["ngọt", "đắng", "đẹp", "xấu", "lớn", "nhỏ"]
   },
 
   // sticky rice
   {
     noun: "xôi",
-    int_adj: ["màu đỏ ", "màu vàng", "dơ", "sạch"],
+    int_adj: ["màu đỏ", "màu vàng", "hình tròn", "hình vuông", "dơ", "sạch"],
     sub_adj: ["ngọt", "đắng", "đẹp", "xấu", "lớn", "nhỏ"]
   },
   // candy

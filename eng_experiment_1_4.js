@@ -37,11 +37,11 @@ var intro = {
 var all_trials = [];
 
 // adding int-int-noun
-all_trials = all_trials.concat(doubleIntNoun(1));
+all_trials = all_trials.concat(doubleIntNoun(10));
 // adding sub-sub-noun
-all_trials = all_trials.concat(doubleSubNoun(1));
+all_trials = all_trials.concat(doubleSubNoun(10));
 // adding sub-int-noun
-all_trials = all_trials.concat(subIntNoun(1));
+all_trials = all_trials.concat(subIntNoun(10));
 
 //randomization of the 3 types of blocks
 all_trials = jsPsych.randomization.repeat(all_trials,1);
