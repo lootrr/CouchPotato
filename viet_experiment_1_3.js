@@ -2,6 +2,7 @@
 
 // timeline that sets the experiment
 var timeline = [];
+var map = {};
 
 // consent form
 var check_consent = function(elem) {
@@ -36,7 +37,10 @@ var intro = {
 
 // creating and pushing the (adj -> adj -> noun) trial blocks into the timeline
 var all_trials = [];
-var map = {};
+
+for(let i = 0; i < viet_stims.length; i++){
+  map[viet_stims[i].noun] = 0;
+}
 
 // adding int-int-noun
 all_trials = all_trials.concat(vietDoubleIntNoun(10));

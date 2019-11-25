@@ -55,6 +55,11 @@ function mapCheck(noun_ind){
   return check;
 }
 
+function printMap(noun_ind){
+  console.log(viet_stims[noun_ind].noun);
+  console.log(map[viet_stims[noun_ind].noun]);
+}
+
 // creating and pushing the (int_adj -> int_adj -> noun) trial blocks into a return array
 function vietDoubleIntNoun(amount){
   let all_trials = [];
@@ -65,6 +70,7 @@ function vietDoubleIntNoun(amount){
       noun_ind = randomInd(0, viet_stims.length);
     }
     map[viet_stims[noun_ind].noun] += 1;
+    //printMap(noun_ind);
     let int_adj_ind1 = randomInd(0, viet_stims[noun_ind].int_adj.length);
     let int_adj_ind2 = randomInd(0, viet_stims[noun_ind].int_adj.length);
 
@@ -108,6 +114,7 @@ function vietDoubleSubNoun(amount){
       noun_ind = randomInd(0, viet_stims.length);
     }
     map[viet_stims[noun_ind].noun] += 1;
+    //printMap(noun_ind);
     let sub_adj_ind1 = randomInd(0, viet_stims[noun_ind].sub_adj.length);
     let sub_adj_ind2 = randomInd(0, viet_stims[noun_ind].sub_adj.length);
     while( sameType(viet_stims[noun_ind].sub_adj[sub_adj_ind1], viet_stims[noun_ind].sub_adj[sub_adj_ind2]) ){
@@ -150,6 +157,7 @@ function vietSubIntNoun(amount){
       noun_ind = randomInd(0, viet_stims.length);
     }
     map[viet_stims[noun_ind].noun] += 1;
+    //printMap(noun_ind);
     let int_adj_ind = randomInd(0, viet_stims[noun_ind].int_adj.length);
     let sub_adj_ind = randomInd(0, viet_stims[noun_ind].sub_adj.length);
     
