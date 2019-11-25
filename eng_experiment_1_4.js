@@ -1,6 +1,7 @@
 // TODO: import data to the server and make sure LCL works
 // timeline that sets the experiment
 var timeline = [];
+var map = {};
 
 // consent form
 var check_consent = function(elem) {
@@ -36,6 +37,11 @@ var intro = {
 // creating and pushing the (adj -> adj -> noun) trial blocks into the timeline
 var all_trials = [];
 
+// creates a map that contains a count of how many times nouns appeared.
+for(let i = 0; i < stims.length; i++){
+  map[stims[i].noun] = 0;
+}
+
 // adding int-int-noun
 all_trials = all_trials.concat(doubleIntNoun(10));
 // adding sub-sub-noun
@@ -70,8 +76,9 @@ jsPsych.init({
       data: {filename: id + ".json", filedata: jsPsych.data.get().json()}
     });
     // end blurb
-    $(".jspsych-display-element").html("<p style='text-align:center;'>" +"The experiment has now ended. Please record and remember the following ID for the next part:" + "</p>" + 
-                                       "<p style=color:blue;text-align:center;font-size:50px;>" + id + "</p>" + 
+    $(".jspsych-display-element").html("<p style='text-align:center;'>" +"The experiment has now ended. " + "</p>" + 
+                                       "<p style='text-align:center; font-size:30px;'>" +"Please record and remember the following ID for the next part:" + "</p>" +
+                                       "<p style=color:red;text-align:center;font-size:50px;>" + id + "</p>" + 
                                        "<p style=text-align:center;>" + "You will now be taking a short demographics survey. It should take no longer than 15 minutes." + "</p>" +
                                        "<a href='https://forms.gle/1ZErnUXF4rzyaxZF6' style='text-align:center;' target='_blank'>" + "survey link is provided here" + "</a>");
   }

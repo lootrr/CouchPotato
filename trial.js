@@ -1,5 +1,6 @@
 
 // These are the specific functions used to generate the experiments
+// this will be used to create key-value pair that prevents more than 3 nouns from appearing.
 
 // declartion function used to find a randon index from [min,max).
 function randomInd(min, max){
@@ -46,6 +47,15 @@ function sameType(adj1, adj2){
   return false;
 }
 
+// checks to see if there is a less than 
+function mapCheck(noun_ind){
+  let check = false;
+  if(map[stims[noun_ind].noun] >= 3){
+    check = true;
+  }
+  return check;
+}
+
 // creating and pushing the (int_adj -> int_adj -> noun) trial blocks into a return array
 function doubleIntNoun(amount){
   let all_trials = [];
@@ -53,6 +63,11 @@ function doubleIntNoun(amount){
 
     // calcuating the random indexes
     let noun_ind = randomInd(0, stims.length);
+    while(mapCheck(noun_ind)){
+      noun_ind = randomInd(0, stims.length);
+    }
+    map[stims[noun_ind].noun] += 1;
+
     let int_adj_ind1 = randomInd(0, stims[noun_ind].int_adj.length);
     let int_adj_ind2 = randomInd(0, stims[noun_ind].int_adj.length);
 
@@ -87,8 +102,12 @@ function doubleSubNoun(amount){
   let all_trials = [];
   for (let size = 0; size < amount; size++){
 
-    // calcuating the random indexes
     let noun_ind = randomInd(0, stims.length);
+    while(mapCheck(noun_ind)){
+      noun_ind = randomInd(0, stims.length);
+    }
+    map[stims[noun_ind].noun] += 1;
+
     let sub_adj_ind1 = randomInd(0, stims[noun_ind].sub_adj.length);
     let sub_adj_ind2 = randomInd(0, stims[noun_ind].sub_adj.length);
     while( sameType(stims[noun_ind].sub_adj[sub_adj_ind1], stims[noun_ind].sub_adj[sub_adj_ind2]) ){
@@ -122,8 +141,12 @@ function subIntNoun(amount){
   let all_trials = [];
   for (let size = 0; size < amount; size++){
 
-    // calcuating the random indexes
     let noun_ind = randomInd(0, stims.length);
+    while(mapCheck(noun_ind)){
+      noun_ind = randomInd(0, stims.length);
+    }
+    map[stims[noun_ind].noun] += 1;
+
     let int_adj_ind = randomInd(0, stims[noun_ind].int_adj.length);
     let sub_adj_ind = randomInd(0, stims[noun_ind].sub_adj.length);
     

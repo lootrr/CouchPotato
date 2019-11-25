@@ -36,6 +36,7 @@ var intro = {
 
 // creating and pushing the (adj -> adj -> noun) trial blocks into the timeline
 var all_trials = [];
+var map = {};
 
 // adding int-int-noun
 all_trials = all_trials.concat(vietDoubleIntNoun(10));
@@ -71,8 +72,9 @@ jsPsych.init({
       data: {filename: id + ".json", filedata: jsPsych.data.get().json()}
     });
     // end blurb
-    $(".jspsych-display-element").html("<p style='text-align:center;'>" + "Cuộc nghiên cứu đă kết thúc. Xin vui lòng ghi lại và nhớ mã số của quý vị cho phần tiếp theo:" + "</p>" + 
-                                       "<p style=color:blue;text-align:center;font-size:50px;>" + id + "</p>" + 
+    $(".jspsych-display-element").html("<p style='text-align:center;'>" + "Cuộc nghiên cứu đă kết thúc. " + "</p>" +
+                                       "<p style='text-align:center;font-size:30px;'>" + "Xin vui lòng ghi lại và nhớ mã số của quý vị cho phần tiếp theo:" + "</p>" + 
+                                       "<p style=color:red;text-align:center;font-size:50px;>" + id + "</p>" + 
                                        "<p style=text-align:center;>" + "Bây giờ quý vị sẽ thực hiện phần khảo sát ngắn về khả năng ngôn ngữ của quý vị. Phan khảo sát nầy sẽ mất không quá 15 phút." + "</p>" +
                                        "<a href='https://forms.gle/9s7dCEKgVKNR9F5X7' style='text-align:center;' target='_blank'>" + "Xin vui lòng nhấn đây" + "</a>");
   }

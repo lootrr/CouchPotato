@@ -32,7 +32,7 @@ function sameType(adj1, adj2){
   if ((adj1 === "ngọt" && adj2 === "đắng") || (adj1 === "đắng" && adj2 == "ngọt")){
     return true;
 
-  }else if ((adj1 === "xấu" && adj2 === "đẹp") || (adj1 === "xấu" && adj2 === "đẹp") ){
+  }else if ((adj1 === "xấu" && adj2 === "đẹp") || (adj1 === "đẹp" && adj2 === "xấu") ){
     return true;
 
   }else if ((adj1 === "lớn" && adj2 === "nhỏ") || (adj1 === "nhỏ" && adj2 === "lớn") ){
@@ -46,13 +46,25 @@ function sameType(adj1, adj2){
   return false;
 }
 
+// checks to see if there is a less than 
+function mapCheck(noun_ind){
+  let check = false;
+  if(map[viet_stims[noun_ind].noun] >= 3){
+    check = true;
+  }
+  return check;
+}
+
 // creating and pushing the (int_adj -> int_adj -> noun) trial blocks into a return array
 function vietDoubleIntNoun(amount){
   let all_trials = [];
   for (let size = 0; size < amount; size++){
 
-    // calcuating the random indexes
     let noun_ind = randomInd(0, viet_stims.length);
+    while(mapCheck(noun_ind)){
+      noun_ind = randomInd(0, viet_stims.length);
+    }
+    map[viet_stims[noun_ind].noun] += 1;
     let int_adj_ind1 = randomInd(0, viet_stims[noun_ind].int_adj.length);
     let int_adj_ind2 = randomInd(0, viet_stims[noun_ind].int_adj.length);
 
@@ -91,8 +103,11 @@ function vietDoubleSubNoun(amount){
   let all_trials = [];
   for (let size = 0; size < amount; size++){
 
-    // calcuating the random indexes
     let noun_ind = randomInd(0, viet_stims.length);
+    while(mapCheck(noun_ind)){
+      noun_ind = randomInd(0, viet_stims.length);
+    }
+    map[viet_stims[noun_ind].noun] += 1;
     let sub_adj_ind1 = randomInd(0, viet_stims[noun_ind].sub_adj.length);
     let sub_adj_ind2 = randomInd(0, viet_stims[noun_ind].sub_adj.length);
     while( sameType(viet_stims[noun_ind].sub_adj[sub_adj_ind1], viet_stims[noun_ind].sub_adj[sub_adj_ind2]) ){
@@ -130,8 +145,11 @@ function vietSubIntNoun(amount){
   let all_trials = [];
   for (let size = 0; size < amount; size++){
 
-    // calcuating the random indexes
     let noun_ind = randomInd(0, viet_stims.length);
+    while(mapCheck(noun_ind)){
+      noun_ind = randomInd(0, viet_stims.length);
+    }
+    map[viet_stims[noun_ind].noun] += 1;
     let int_adj_ind = randomInd(0, viet_stims[noun_ind].int_adj.length);
     let sub_adj_ind = randomInd(0, viet_stims[noun_ind].sub_adj.length);
     
