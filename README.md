@@ -1,6 +1,6 @@
 # CouchPotato
 
-CouchPotato is a behavorial experiment built for the Language Comprehension Lab @ UCSD. It was built using the jsPsych library. What this application aims to accomplish is to see if there are differences in the way we understand placements of specific adjectives within a given passage. For example, take the adjective + noun phrase (dirty red car). Would a participant prefer this specific adjective placement or would they prefer "red dirty car"?
+CouchPotato is a behavorial web-application built for the Language Comprehension Lab @ UCSD. It was built using the jsPsych library. What this application aims to accomplish is to see if there are differences in the way we understand placements of specific adjectives within a given passage. For example, take the adjective + noun phrase (dirty red car). Would a participant prefer this specific adjective placement or would they prefer "red dirty car"?
 
 ## Installation
 
